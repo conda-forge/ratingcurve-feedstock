@@ -20,7 +20,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools_scm
+    - setuptools >=77
+    - setuptools_scm >=6.2
   run:
     - python >={{ python_min }}
     - arviz
