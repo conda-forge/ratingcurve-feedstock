@@ -23,8 +23,17 @@ requirements:
     - setuptools_scm
   run:
     - python >={{ python_min }}
-    - pymc >=5.0.0
+    - arviz
+    - matplotlib-base
+    - netcdf4
+    - numpy
+    - pandas
     - patsy
+    # 5.28.1 is the first release to cap arviz <1.0; earlier releases resolve
+    # to arviz 1.x, which pymc 5 cannot import
+    - pymc >=5.28.1
+    - pytensor
+    - xarray
 
 test:
   imports:
@@ -38,7 +47,7 @@ test:
 about:
   home: https://pypi.org/project/ratingcurve/
   summary: A library for fitting multi-segment stage-discharge rating curves.
-  license: Unlicense
+  license: CC0-1.0
   license_file: LICENSE.md
 
 extra:
